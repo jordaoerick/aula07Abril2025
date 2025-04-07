@@ -1,7 +1,6 @@
 #include <stdio.h>
-#include <string.h> // Para manipulação de strings (embora aqui usemos só a inicial)
+#include <string.h>
 
-// Definindo a estrutura para armazenar as informações de um jogador
 struct Jogador {
     int numeroCamisa;
     float peso;
@@ -10,10 +9,8 @@ struct Jogador {
 };
 
 int main() {
-    // Declarando um array de structs para armazenar as informações de 3 jogadores
     struct Jogador jogadores[3];
 
-    // Lendo as informações de cada jogador
     printf("Informe os dados dos 3 jogadores:\n");
     for (int i = 0; i < 3; i++) {
         printf("\nJogador %d:\n", i + 1);
@@ -24,10 +21,9 @@ int main() {
         printf("Altura (em metros): ");
         scanf("%f", &jogadores[i].altura);
         printf("Inicial do nome: ");
-        scanf(" %c", &jogadores[i].inicialNome); // Note o espaço antes do %c para consumir a quebra de linha anterior
+        scanf(" %c", &jogadores[i].inicialNome);
     }
 
-    // Encontrando o jogador mais baixo
     float menorAltura = jogadores[0].altura;
     char inicialMaisBaixo = jogadores[0].inicialNome;
     for (int i = 1; i < 3; i++) {
@@ -37,7 +33,6 @@ int main() {
         }
     }
 
-    // Encontrando o jogador mais pesado
     float maiorPeso = jogadores[0].peso;
     int numeroMaisPesado = jogadores[0].numeroCamisa;
     for (int i = 1; i < 3; i++) {
@@ -47,7 +42,6 @@ int main() {
         }
     }
 
-    // Imprimindo os resultados
     printf("\nResultados:\n");
     printf("Inicial do jogador mais baixo: %c\n", inicialMaisBaixo);
     printf("Número da camisa do jogador mais pesado: %d\n", numeroMaisPesado);
